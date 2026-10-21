@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Mahasiswa</title>
+    <!-- Hubungkan ke file CSS -->
+    <link href="uts1.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="container">
+    <!-- HEADER -->
+    <header>
+        <div class="header-logo">PURBA.DEV</div>
+        <div class="header-title">
+            <h1>Profil Mahasiswa</h1>
+        </div>
+    </header>
+
+    <!-- KONTEN UTAMA  -->
+    <main class="main-content">
+        <!-- NAVIGASI -->
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="javascript:void(0)" class="nav-link active" onclick="showContent('biodata', this)">Biodata</a></li>
+                <li><a href="javascript:void(0)" class="nav-link" onclick="showContent('pendidikan', this)">Pendidikan</a></li>
+                <li><a href="javascript:void(0)" class="nav-link" onclick="showContent('pengalaman', this)">Pengalaman</a></li>
+                <li><a href="javascript:void(0)" class="nav-link" onclick="showContent('keahlian', this)">Keahlian</a></li>
+                <li><a href="javascript:void(0)" class="nav-link" onclick="showContent('publikasi', this)">Publikasi</a></li>
+            </ul>
+        </nav>
+
+        <!-- SECTION (KONTEN DINAMIS) -->
+        <section class="section-content">
+            <!-- 1. Biodata (Default tampil) -->
+            <div id="biodata" class="tab-pane active">
+                <h2>Biodata</h2>
+                <table class="table-info">
+                    <tr>
+                        <td><strong>NIM</strong></td>
+                        <td>: 2026087001</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nama</strong></td>
+                        <td>: Anggias Jonathan Purba</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Agama</strong></td>
+                        <td>: Kristen Protestan</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tanggal Lahir</strong></td>
+                        <td>: 05 Mei 2007</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tempat Lahir</strong></td>
+                        <td>: Tangerang</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- 2. Pendidikan -->
+            <div id="pendidikan" class="tab-pane">
+                <h2>Riwayat Pendidikan</h2>
+                <ul>
+                    <li><strong>S1:</strong> Sistem Informasi - Universitas Pembangunan Jaya <em>(Current)</em></li>
+                    <li><strong>SMK:</strong> SMK Letris 2 Indonesia</li>
+                </ul>
+            </div>
+
+            <!-- 3. Pengalaman -->
+            <div id="pengalaman" class="tab-pane">
+                <h2>Pengalaman</h2>
+                <ul>
+                    <li>
+                        <strong>IT Support Intern</strong> — Dinas Komunikasi dan Informatika (Diskominfo) Kota Tangerang Selatan (Januari – April 2024): 
+                        Bertanggung jawab atas pemeliharaan perangkat kerja, instalasi sistem, dan troubleshooting kendala teknis jaringan.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 4. Keahlian -->
+            <div id="keahlian" class="tab-pane">
+                <h2>Keahlian</h2>
+                <ul>
+                    <li>Web Development (HTML5, CSS3, JavaScript, PHP)</li>
+                    <li>Networking & Hardware Troubleshooting</li>
+                </ul>
+            </div>
+
+            <!-- 5. Publikasi -->
+            <div id="publikasi" class="tab-pane">
+                <h2>Publikasi & Proyek</h2>
+                <ul>
+                    <li>Pengembangan Web Profil Portofolio  Berbasis  HTML dan CSS (2026)</li>
+                    <li>Dokumentasi & Laporan Operasional IT Support Dinas Kominfo Tangsel (2024)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ASIDE -->
+        <aside class="aside-content">
+            <h3>Hobi:</h3>
+            <ul class="hobby-list">
+                <li>Bulutangkis</li>
+                <li>Pemrograman</li>
+            </ul>
+        </aside>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-col footer-left">
+            Twitter: -<br>
+            FB: -<br>
+            Instagram: @jonathan0505006
+        </div>
+        <div class="footer-col footer-center">
+            &copy; Copyright 2026. Made By Jojo
+        </div>
+        <div class="footer-col footer-right">
+            <strong>PURBA.DEV</strong><br>
+            <span>Learning By Doing</span>
+        </div>
+    </footer>
+</div>
+
+<!-- PERPINDAHAN KONTEN SECTION -->
+<script>
+    function showContent(tabId, element) {
+        // Sembunyikan semua tab content
+        const panes = document.querySelectorAll('.tab-pane');
+        panes.forEach(pane => pane.classList.remove('active'));
+
+        // Hilangkan status active dari semua tombol menu nav
+        const links = document.querySelectorAll('.nav-link');
+        links.forEach(link => link.classList.remove('active'));
+
+        // Tampilkan tab yang dipilih
+        const selectedPane = document.getElementById(tabId);
+        if (selectedPane) {
+            selectedPane.classList.add('active');
+        }
+
+        // Tandai link yang sedang diklik
+        if (element) {
+            element.classList.add('active');
+        }
+    }
+</script>
+
+</body>
+</html>

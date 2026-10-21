@@ -1,0 +1,318 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+    padding: 10px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    border: 1px solid #777;
+    background-color: #fff;
+}
+
+/* ================= HEADER ================= */
+header {
+    border-bottom: 2px solid #333;
+    padding: 12px 18px;
+    position: relative;
+    background-color: #f1f1f1;
+}
+
+.header-logo {
+    font-size: 13px;
+    font-weight: bold;
+    color: #444;
+    text-transform: uppercase;
+}
+
+.header-title {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.header-title h1 {
+    font-size: 26px;
+    letter-spacing: 0.5px;
+}
+
+/* ========== KONTEN UTAMA ========= */
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 380px;
+}
+
+/* Tab panes default */
+.tab-pane {
+    display: none;
+}
+.tab-pane.active {
+    display: block;
+}
+
+.tab-pane h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.table-info td {
+    padding: 6px 12px 6px 0;
+    vertical-align: top;
+}
+
+/* ========== FOOTER ========= */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #333;
+    padding: 15px 20px;
+    background-color: #f1f1f1;
+    font-size: 14px;
+}
+
+.footer-col {
+    flex: 1;
+}
+
+.footer-left {
+    text-align: left;
+    line-height: 1.6;
+}
+
+.footer-center {
+    text-align: center;
+}
+
+.footer-right {
+    text-align: right;
+    line-height: 1.4;
+}
+
+/* ======= MEDIA QUERIES ====== */
+
+/* 1. DESKTOP LAYOUT (Lebar > 992px)
+   NAV (25%) | SECTION (50%) | ASIDE (25%) sejajar horizontal */
+@media screen and (min-width: 993px) {
+    .nav-bar {
+        width: 25%;
+        border-right: 1px solid #aaa;
+        padding: 20px 15px;
+    }
+
+    .nav-bar ul {
+        list-style: none;
+    }
+
+    .nav-bar ul li {
+        margin-bottom: 10px;
+    }
+
+    .nav-bar ul li a {
+        display: block;
+        padding: 8px 12px;
+        color: #000;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+
+    .nav-bar ul li a:hover,
+    .nav-bar ul li a.active {
+        background-color: #0056b3;
+        color: #fff;
+    }
+
+    .section-content {
+        width: 50%;
+        padding: 20px 25px;
+    }
+
+    .aside-content {
+        width: 25%;
+        border-left: 1px solid #aaa;
+        padding: 20px 15px;
+    }
+
+    .aside-content ul {
+        padding-left: 20px;
+        margin-top: 10px;
+        line-height: 1.8;
+    }
+}
+
+/* 2. TABLET LANDSCAPE LAYOUT (769px s/d 992px)
+   NAV di kiri (25%), lalu di kanannya SECTION (100%) dan ASIDE (100%) bertumpuk */
+@media screen and (min-width: 769px) and (max-width: 992px) {
+    .nav-bar {
+        width: 25%;
+        border-right: 1px solid #aaa;
+        padding: 15px;
+    }
+
+    .nav-bar ul {
+        list-style: none;
+    }
+
+    .nav-bar ul li {
+        margin-bottom: 8px;
+    }
+
+    .nav-bar ul li a {
+        display: block;
+        padding: 8px 10px;
+        color: #000;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+
+    .nav-bar ul li a:hover,
+    .nav-bar ul li a.active {
+        background-color: #0056b3;
+        color: #fff;
+    }
+
+    .section-content {
+        width: 75%;
+        padding: 20px;
+        border-bottom: 1px solid #aaa;
+    }
+
+    .aside-content {
+        width: 75%;
+        margin-left: 25%;
+        padding: 15px 20px;
+    }
+
+    .aside-content ul {
+        padding-left: 20px;
+        margin-top: 8px;
+        line-height: 1.6;
+    }
+}
+
+/* 3. TABLET PORTRAIT LAYOUT (577px s/d 768px)
+   NAV (100% mendatar / inline), SECTION (100%), ASIDE (100%) */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    .nav-bar {
+        width: 100%;
+        border-bottom: 1px solid #aaa;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .nav-bar ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-bar ul li a {
+        text-decoration: none;
+        color: #000;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-weight: bold;
+    }
+
+    .nav-bar ul li a:hover,
+    .nav-bar ul li a.active {
+        background-color: #0056b3;
+        color: #fff;
+    }
+
+    .section-content {
+        width: 100%;
+        padding: 20px;
+        border-bottom: 1px solid #aaa;
+    }
+
+    .aside-content {
+        width: 100%;
+        padding: 15px 20px;
+    }
+
+    .aside-content ul {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        margin-top: 8px;
+    }
+}
+
+/* 4. SMARTPHONE LAYOUT (Lebar <= 576px)
+   Semua full width (100%), NAV tersusun menurun (vertikal) */
+@media screen and (max-width: 576px) {
+    .nav-bar {
+        width: 100%;
+        border-bottom: 1px solid #aaa;
+        padding: 10px 15px;
+    }
+
+    .nav-bar ul {
+        list-style: none;
+    }
+
+    .nav-bar ul li {
+        margin-bottom: 6px;
+    }
+
+    .nav-bar ul li a {
+        display: block;
+        text-decoration: none;
+        color: #000;
+        padding: 8px 10px;
+        background-color: #f7f7f7;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    .nav-bar ul li a:hover,
+    .nav-bar ul li a.active {
+        background-color: #0056b3;
+        color: #fff;
+    }
+
+    .section-content {
+        width: 100%;
+        padding: 15px;
+        border-bottom: 1px solid #aaa;
+    }
+
+    .aside-content {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .aside-content ul {
+        padding-left: 20px;
+        margin-top: 5px;
+        line-height: 1.6;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        text-align: center;
+    }
+}
